@@ -4,11 +4,11 @@ import HomePage from "./pages/HomePage";
 import CoursePage from "./pages/CoursePage";
 import CourseListPage from "./pages/CourseListPage";
 import WishlistPage from "./pages/WishlistPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function Main() {
     return (
         <BrowserRouter>
-            {/* <App> */}
             <Routes>
                 <Route path="/" element={<App />}>
                     <Route index element={<HomePage />} />
@@ -17,9 +17,9 @@ function Main() {
                         <Route path=":courseSlug" element={<CoursePage />} />
                     </Route>
                     <Route path="wishlist" element={<WishlistPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Route>
             </Routes>
-            {/* </App> */}
         </BrowserRouter>
     );
 }
